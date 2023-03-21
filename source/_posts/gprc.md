@@ -14,8 +14,8 @@ https://grpc.io/docs/languages/java/quickstart/
 
 ## code解析
 1. demo中的业务代码，其实就是sayHello的实现，在
-`GreeterGrpc.GreeterImplBase`中
-```
+GreeterGrpc.GreeterImplBase中
+``` java
     @Override
     public void sayHello(HelloRequest req, StreamObserver<HelloReply> responseObserver) {
       HelloReply reply = HelloReply.newBuilder().setMessage("Hello " + req.getName()).build();
@@ -25,7 +25,7 @@ https://grpc.io/docs/languages/java/quickstart/
 ```
 
 2. 服务端  
-```
+``` java
 int port = 50051;
     server = ServerBuilder.forPort(port)
         .addService(new GreeterImpl())
@@ -34,37 +34,39 @@ int port = 50051;
 ```
 
 3. 客户端
-```
-1) 通过地址创建channel
+
+1) 通过地址创建channel  
+``` java
 ManagedChannel channel = ManagedChannelBuilder.forTarget("localhost:50051")
         // 使用明文避免需要证书
         .usePlaintext().build();
+```
 2) 通过channel创建stub
+``` java
 HelloGrpc.HelloBlockingStub blockingStub = HelloGrpc.newBlockingStub(channel);
-3) 创建request并设置参数
+```
+3) 创建request并设置参数  
+``` java
 HelloRequest request = HelloRequest.newBuilder().setName(name).build();
 4) 通过stub发送request
     HelloReply response response = blockingStub.sayHello(request);
-```  
-
----
-
+```
 ### 遇到的问题
 1. 开始参考quick start跑demo的时候，maven提示找不到jar包，然后我果断切换到一个2021年的分支。但还是报找不到jar报, 在maven仓库中搜索了下确实找不到`grpc-stub 1.33.2-SNAPSHOT`,果断替换成`1.33.1`  
 2. maven编译成功后，IDEA中始终会显示包没引用正确的报错标记。但其实这只是IDEA的显示问题，不影响run，前提是无法通过界面运行Client和Server的Main方法了。  
 > 在IDEA显示问题上追究很浪费时间，别忘记要学习的内容   
+> 这里需要一下mvn的知识:  
+> run server bash
+> ```
+> mvn  -Dexec.mainClass=io.grpc.examples.helloworld.> > > HelloWorldServer exec:java
+> ```
+> run client
+> ``` bash
+> mvn -Dexec.mainClass=io.grpc.examples.helloworld.> HelloWorldClient exec:java
+> ```
+> 3. 本来还很奇怪grpc官网连jdk7都可以支持，怎么mvn编译demo的> 方式也不提供下。用过之后，只想说 **真香** --> [安装使用> > gradle](#安装使用gradle)  
+> 4. 注意生成的代码在`target`或`build`目录  
 
-这里需要一下mvn的知识:  
-run server
-```
-mvn  -Dexec.mainClass=io.grpc.examples.helloworld.HelloWorldServer exec:java
-```
-run client
-```
-mvn  -Dexec.mainClass=io.grpc.examples.helloworld.HelloWorldClient exec:java
-```
-3. 本来还很奇怪grpc官网连jdk7都可以支持，怎么mvn编译demo的方式也不提供下。用过之后，只想说 **真香** --> [安装使用gradle](#安装使用gradle)  
-4. 注意生成的代码在`target`或`build`目录
 ---
 
 ### 安装使用gradle  
@@ -80,7 +82,7 @@ https://juejin.cn/post/6932813521344430094
 #### 3.配置
 3.1 镜像
 在bin的上级目录新建文件 **init.gradle** 设置国内代理
-```
+``` bash
 allprojects {
     repositories {
         maven { url 'file://D:/maven_repo'}
@@ -102,7 +104,7 @@ allprojects {
 
 3.2 IDEA配置  
 以下是IDEA的配置截图
-![](grpc/config.jpg)
+![](/images/config.jpg)
 
 
 
