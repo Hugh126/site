@@ -1,8 +1,23 @@
 ---
 title: protobuf
 date: 2023-03-19 11:52:58
-tags:
+tags: protobuf
+#description: Protobuf是Google开发的一种跨语言跨平台, 轻量高效的序列化数据结构
 ---
+
+Google Protocol Buffer(简称Protobuf)是 Google开发的一种跨语言跨平台,轻量高效的序列化数据结构。
+广泛用于服务器间通信以及存档存储磁盘上的数据。
+<!--more--> 
+一个入门的例子是
+```
+message Person {
+  optional string name = 1;
+  optional int32 id = 2;
+  optional string email = 3;
+}
+```
+
+
 ## 1. 安装
 
 [3.20RC版本下载地址](https://github.com/protocolbuffers/protobuf/releases/tag/v3.20.1-rc1)  
