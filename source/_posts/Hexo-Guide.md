@@ -128,9 +128,14 @@ hexo new page commonweal
 > - Gitment评论系统
 > 基于Github的issure，需要注册注册 OAuth application  
 开始之前在`themes\next\package.json` 看看本地安装next版本。  
-- 如果是Next8.1.0以下，建议直接使用[配置Valine](#12-配置valine)  
+- 如果是Next8.1.0以下，建议直接使用[配置Valine](#12配置valine)  
 - 如果是最新8.1以上版本，next已经取消内置Valine，也不建议降级，毕竟后续有新的特性想升级呢？  
-配置waline的配置请参考[配置waline](#11-配置waline)
+配置waline的配置请参考[配置waline](#11配置waline)  
+---
+配置之后发现一个问题，手机端无法访问到评论。显然被墙了，后续考虑私有部署。  
+
+
+
 ### 11、配置waline
 1. 官网的教程已经很清楚了。参照着截图的步骤来， 注意选择国际版
 https://waline.js.org/guide/get-started/  
