@@ -44,8 +44,7 @@ public class CacheConfig extends CachingConfigurerSupport {
 3. @Cacheable("xxx")作用于方法  
 定义一个get方法，并加上Cacheable注解就可以了。  
 这里cache需要要有一个key，因此cacheNames必不可少。  
----
-以上就是一个入门的例子了，默认使用的是ConcurrentHashMap。也可以参考[官网的例子](https://spring.io/guides/gs/caching/),类似  
+
 
 ##扩展：使用Reids作为缓存实现 
 1. yml配置  
