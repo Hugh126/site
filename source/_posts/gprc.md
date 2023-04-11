@@ -72,46 +72,8 @@ HelloRequest request = HelloRequest.newBuilder().setName(name).build();
 > ```
 > 3. 本来还很奇怪grpc官网连jdk7都可以支持，怎么mvn编译demo的>方式也不提供下。用过之后，只想说 [真香!] --> [安装使用gradle](#安装使用gradle)  
 > 4. 注意生成的代码在`target`或`build`目录  
-
----
-
-## 安装使用gradle  
-
-#### 1. 理解
-https://juejin.cn/post/6932813521344430094  
-
-
-#### 2. 安装
-从[安装目录](https://services.gradle.org/distributions/)找一个不那么早的下载，然后bin目录加入到path即可  
-`gradle -v` 验证
-
-#### 3.配置
-3.1 镜像
-在bin的上级目录新建文件 **init.gradle** 设置国内代理
-``` bash
-allprojects {
-    repositories {
-        maven { url 'file://D:/maven_repo'}
-        mavenLocal()
-        maven { name "Alibaba" ; url "https://maven.aliyun.com/repository/public" }
-        maven { name "Bstek" ; url "http://nexus.bsdn.org/content/groups/public/"}
-        mavenCentral()
-    }
-    buildscript { 
-        repositories { 
-            maven { name "Alibaba" ; url 'https://maven.aliyun.com/repository/public'}
-            maven { name "Bstek" ; url 'http://nexus.bsdn.org/content/groups/public/' }
-            maven { name "M2" ; url 'https://plugins.gradle.org/m2/'}
-        }
-    }
-}
-```
-**注意：** 这里有个指向本地目录是gradle本地仓库，其实也可以是maven本地仓库  
-
-3.2 IDEA配置  
-以下是IDEA的配置截图
-![](/images/config.jpg)  
-
 > 其他demo参考
-> https://www.cnblogs.com/zhongyuanzhao000/p/13783165.html
+https://www.cnblogs.com/zhongyuanzhao000/p/13783165.html  
+
+
 
