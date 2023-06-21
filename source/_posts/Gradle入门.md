@@ -95,7 +95,7 @@ gradle build
 gradle clean
 # 编译测试代码，生成测试报告
 gradle test
-# 跳过测试构建构建
+# 跳过测试构建
 gradle build-x test
 ```
 IDEA自带的Gradle集成了这些常见命令，另外还对应用也做了支持：  
