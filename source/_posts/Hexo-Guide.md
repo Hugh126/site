@@ -93,6 +93,9 @@ https://leay.net/2019/12/25/hexo/
 $ npm install hexo-deployer-git --save
 ```
 参考[gitpage指南](https://hexo.io/zh-cn/docs/github-pages)  
+> 时间一久就忘记了怎么部署，还是记录一下：
+> 项目根目录下会配置git的地址和提交的msg，这也是hexo的deploy的能力。  
+因此，直接 `hexo deploy`就可以部署最新的到Github.io 。同时为了避免本地内容的丢失，也需要将本地内容commit && push到远端
 
 ### 9、设置菜单  
 通过主题hexT的能力，参考：
@@ -181,4 +184,17 @@ valine:
 
 3. 管理评论  
 进入 LeanCloud 官网，找到 控制台->存储->commet 中进行管理  
+
+
+
+### 配置统计
+网站时常需要了解本地的请求来源以及次数或用户点击数之类的统计。
+1. 使用[umami](https://umami.is/)  
+最新被安利到这个玩意儿（开源），结果hexo又又又意外的兼容了。没办法，直接上手吧。在next主题下的_config.yml中找到umami启用，并配置好网站和注册(可以使用它自带的cloud账号，免费的每月可以有10k事件和3个网址)的ID即可。  
+
+    > 缺点很明显，这云js(https://analytics.umami.is/script.js)被墙了  
+    连统计结果view(https://analytics.umami.is/{ID})也无法直接看  
+
+2. 百度统计  
+百度统计(https://tongji.baidu.com/)个人也可以注册，也可以添加Github的个人网页。最主要是国内不被墙，统计维度成熟丰富，也被next插件集成，墙裂推荐！不然就得自己折腾服务器域名，还得搭建统计服务了。  
 
