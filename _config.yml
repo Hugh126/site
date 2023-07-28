@@ -105,4 +105,4 @@ deploy:
   type: git
   repo: https://github.com/Hugh126/Hugh126.github.io.git
   branch: master
-  message: init hexo
+  message: add umami, and some pages
