@@ -3,6 +3,10 @@ title: 从Docker到Kubernetes
 date: 2023-09-26 14:58:33
 tags:
 ---
+docker作为容器虚拟化技术，用起来是真的香。谁用谁知道...  
+知道什么是趋势，我们就知道到底要不要去学一样东西。
+<!--more-->
+
 # 一 认识Docker
 Docker 是一种开源的软件平台，用于创建、运行和管理容器化的应用程序。容器是一种轻量级的虚拟化技术，可以在隔离的环境中运行应用程序和其依赖项，从而提高可移植性、安全性和效率。要了解 Docker 的工作原理，你需要了解以下几个概念：
 
@@ -14,15 +18,15 @@ Docker 是一种开源的软件平台，用于创建、运行和管理容器化�
 
 如果你想学习如何使用 Docker 来构建和运行容器化的应用程序，你可以参考以下一些教程：
 
-- [Docker 101 Tutorial](^1^)：这是一个自学的教程，教你如何构建镜像、运行容器、使用卷来持久化数据和挂载源代码，以及使用 Docker Compose 来定义应用程序。你还可以学习一些高级主题，如网络和镜像构建最佳实践。
-- [Overview of the get started guide](^2^)：这是一个分步的指南，教你如何开始使用 Docker。这个指南向你展示如何构建和运行一个镜像作为一个容器，如何使用 Docker Hub 来共享镜像，如何使用多个容器和数据库来部署 Docker 应用程序，以及如何使用 Docker Compose 来运行应用程序。
-- [Learn Docker Tutorial](^3^)：这是一个涵盖了 Docker 的基本概念、特性、架构、安装、镜像和容器等方面的教程。你还可以学习如何使用 Dockerfile 和 Docker Compose 来创建和管理自己的应用程序，并查看一些不同编程语言（如 Java, PHP, Python, Scala, Perl, Ruby, Swift, Ubuntu 等）的示例。
+- [Docker 101 Tutorial](https://www.docker.com/101-tutorial/)(^1^)：这是一个自学的教程，教你如何构建镜像、运行容器、使用卷来持久化数据和挂载源代码，以及使用 Docker Compose 来定义应用程序。你还可以学习一些高级主题，如网络和镜像构建最佳实践。
+- [Overview of the get started guide](https://docs.docker.com/get-started/)(^2^)：这是一个分步的指南，教你如何开始使用 Docker。这个指南向你展示如何构建和运行一个镜像作为一个容器，如何使用 Docker Hub 来共享镜像，如何使用多个容器和数据库来部署 Docker 应用程序，以及如何使用 Docker Compose 来运行应用程序。
+- [Learn Docker Tutorial](https://www.javatpoint.com/docker-tutorial)(^3^)：这是一个涵盖了 Docker 的基本概念、特性、架构、安装、镜像和容器等方面的教程。你还可以学习如何使用 Dockerfile 和 Docker Compose 来创建和管理自己的应用程序，并查看一些不同编程语言（如 Java, PHP, Python, Scala, Perl, Ruby, Swift, Ubuntu 等）的示例。
 
 源: 与必应的对话， 2023/9/26
 (1) Docker 101 Tutorial | Docker. https://www.docker.com/101-tutorial/.
 (2) Overview of the get started guide | Docker Docs. https://docs.docker.com/get-started/.
 (3) Learn Docker Tutorial - javatpoint. https://www.javatpoint.com/docker-tutorial.
-(4) undefined. https://labs.play-with-docker.com/.
+(4) play-with-docker. https://labs.play-with-docker.com/.
 
 # 二 Docker运行原理
 Docker运行原理是利用Linux内核的特性，如cgroups、namespaces和AUFS等，来实现应用程序和系统资源的隔离和虚拟化。Docker的工作过程大致如下：
