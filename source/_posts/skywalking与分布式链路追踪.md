@@ -132,6 +132,14 @@ https://dlcdn.apache.org/skywalking/java-agent/9.0.0/
 > 非代码侵入的trace方式参考： https://blog.csdn.net/zxh1991811/article/details/115379470  
 
 
+## 5.2 输出Span日志到skywalking
+
+- skywalking的自定义Trace可以帮助我们融入业务指标，定位到业务异常。但是，如果还需要反过来去日志服务中寻找相关异常，岂不是很浪费时间。这一节就是要解决这个痛点!  
+https://blog.csdn.net/wb4927598/article/details/119192594
+
+
+
+
 
 
 

@@ -28,6 +28,20 @@ Docker 是一种开源的软件平台，用于创建、运行和管理容器化�
 (3) Learn Docker Tutorial - javatpoint. https://www.javatpoint.com/docker-tutorial.
 (4) play-with-docker. https://labs.play-with-docker.com/.
 
+
+## 1.1 docker基本命令
+``` sh
+# ubantu中切换到root再执行docker命令，sudo执行不正确
+sudo -i
+# 镜像查询
+docker image ls
+# 删除镜像
+docker imgage rm ${id}
+# 运行中进程查询
+docker ps -a
+
+```
+
 # 二 Docker运行原理
 Docker运行原理是利用Linux内核的特性，如cgroups、namespaces和AUFS等，来实现应用程序和系统资源的隔离和虚拟化。Docker的工作过程大致如下：
 
