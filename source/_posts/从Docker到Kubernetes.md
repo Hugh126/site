@@ -29,16 +29,52 @@ Docker 是一种开源的软件平台，用于创建、运行和管理容器化�
 (4) play-with-docker. https://labs.play-with-docker.com/.
 
 
-## 1.1 docker基本命令
+## 1.1 docker容器基本命令
 ``` sh
-# ubantu中切换到root再执行docker命令，sudo执行不正确
-sudo -i
-# 镜像查询
-docker image ls
-# 删除镜像
-docker imgage rm ${id}
-# 运行中进程查询
+# 根据镜像启动容器
+docker run [OPTIONS] IMAGE [COMMAND] [ARG...]
+# 例如，以交互模式启动一个 ubuntu 容器，并执行 bash 命令
+docker run -it ubuntu bash
+
+# 显示主机中的容器，不加选项默认只列出运行中的容器
+docker ps [OPTIONS]
+# 例如，显示所有容器，包括已停止的
 docker ps -a
+
+# 启动容器
+docker start CONTAINER
+# 例如，启动一个名为 mycontainer 的容器
+docker start mycontainer
+
+# 停止容器
+docker stop CONTAINER
+# 例如，停止一个名为 mycontainer 的容器
+docker stop mycontainer
+
+# 重启容器
+docker restart CONTAINER
+# 例如，重启一个名为 mycontainer 的容器
+docker restart mycontainer
+
+# 进入正在运行的容器，有两种方式
+# 方式一：使用 docker exec 命令，在容器中执行一个新的进程
+docker exec [OPTIONS] CONTAINER COMMAND [ARG...]
+# 例如，以交互模式在一个名为 mycontainer 的容器中执行 bash 命令
+docker exec -it mycontainer bash
+# 方式二：使用 docker attach 命令，连接到容器的主进程的标准输入、输出和错误流
+docker attach [OPTIONS] CONTAINER
+# 例如，连接到一个名为 mycontainer 的容器
+docker attach mycontainer
+
+# 退出容器，有两种方式
+# 方式一：在容器中执行 exit 命令，退出并停止容器
+exit
+# 方式二：按 Ctrl+P+Q 组合键，退出但不停止容器
+
+# 删除容器
+docker rm [OPTIONS] CONTAINER [CONTAINER...]
+# 例如，删除一个名为 mycontainer 的容器
+docker rm mycontainer
 
 ```
 
