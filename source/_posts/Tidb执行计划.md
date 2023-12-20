@@ -1,5 +1,5 @@
 ---
-title: Tidb执行计划
+title: TiDB执行计划
 date: 2023-09-13 15:47:10
 tags:
 ---
