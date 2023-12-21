@@ -6,14 +6,18 @@ tags:
 作为有点经验的java coder，使用jdbc或者mybatis的时候有没有发现一点问题？插入大量数据怎么这么慢！查询大量结果，怎么一下就OOM了！！
 <!--more-->
 
-> 先说结论：
+## 先说结论 
 1. jdbc默认只会一条条执行insert，即使你调用的是batch
 2. jdbc默认一次性将全部结果拉取到客户端，数据量一大极容易OOM
-> 解决方案：
-1. url加上参数`rewriteBatchedStatements=true`
+
+### 解决方案：
+1. url加上参数`rewriteBatchedStatements=true`,其作用是改写你的sql为多行insert/update
 2. url加上参数`defaultfetchsize=-214783648`,并使用`StreamingResult`
-下面列举下demo说明：  
-> 依赖:  
+
+### 实验准备
+不动手试试，总是无法辨明真伪的。  
+自行建一个有jdbc的项目，通过junit单元测试验证。
+ - maven依赖:  
 ``` xml
     <dependency>
       <groupId>mysql</groupId>
@@ -27,6 +31,17 @@ tags:
       <version>4.12</version>
       <scope>test</scope>
     </dependency>
+```
+- jvm参数  
+不设置最大内存的话，特别是大量拉取的时候对比不了效果。我设置的最大堆内存是5m。  
+`-Xmx5m -Xms5m`  
+为方便，顺便打印下相关参数：  
+``` java
+    @BeforeClass
+    public static void beforeClass() throws Exception {
+        RuntimeMXBean runtimeMxBean = ManagementFactory.getRuntimeMXBean();
+        runtimeMxBean.getInputArguments().stream().forEach(System.out::println);
+    }
 ```
 
 ## 批量插入
@@ -60,7 +75,58 @@ tags:
         }
     }
 ```
-> TODO: 测试下，应该不是在一个事务内，可能无法回滚
+
+### 批量插入可能存在的问题
+一般创建的连接都是自动commit的，无法针对异常rollback。也就是说，你批量插入一堆数据，保不齐什么时候异常了，只插入了一半。至于说插入了多少数据，那不知道（自动commit的时机应该是客户端根据缓存自行确定的）。
+
+#### 测试实验
+这里我准备插入50w，所以让它在45w的时候异常，测试一下实际插入情况。  
+``` sql
+# 清空表
+truncate user;
+# 构造1个唯一索引
+create unique index user_email_uindex
+	on user (email);
+# 插入一条冲突数据（）
+INSERT INTO benchtest.user (id, name, sno, email, pass, source) VALUES (1, DEFAULT, null, 'email450000', '', '');
+```
+实验结果： 表中存在356961条数据
+> 说明：之前测试插入5w数据，想着4w5的时候异常，结果直接提交成功了。
+
+#### 批量插入优化
+既然知道问题是自动提交引发的，那么改成手动提交就可以了。  
+``` java
+   @Test
+    public void test2() throws SQLException {
+        String url = "jdbc:mysql://localhost:3306/benchtest?rewriteBatchedStatements=true";
+        Connection connection = null;
+        try {
+            long start = System.currentTimeMillis();
+            connection = DriverManager.getConnection(url, username, password);
+            connection.setAutoCommit(false);
+            System.out.println("AutoCommit=" + connection.getAutoCommit());
+            PreparedStatement statement = connection.prepareStatement("INSERT INTO user (email, pass, name) VALUES (?, ?, ?)");
+            for (int i = 0; i < 500000; i++) {
+                statement.setString(1, "email"+i);
+                statement.setString(2, "pass"+i);
+                statement.setString(3, "name"+i);
+                statement.addBatch();
+            }
+            int[] updateCounts = statement.executeBatch();
+            connection.commit();
+            long end = System.currentTimeMillis();
+            System.out.println("updateCounts=" + updateCounts.length + " cost=" + (end-start)/1000);
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+            connection.rollback();
+        }finally {
+            if (connection != null) {
+                connection.close();
+            }
+        }
+    }
+```
+
 
 ## 大结果集查询
 这个主要是defaultfetchsize的影响，默认0，即一次性获取全部结果。  
