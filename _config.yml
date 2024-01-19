@@ -103,6 +103,6 @@ theme: next
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
   type: git
-  repo: https://github.com/Hugh126/Hugh126.github.io.git
+  repo: git@github.com:Hugh126/Hugh126.github.io.git
   branch: master
-  message: add umami, and some pages
+  message: jdbc参数最佳实践

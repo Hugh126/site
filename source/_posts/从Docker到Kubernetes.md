@@ -95,7 +95,7 @@ Docker运行原理是利用Linux内核的特性，如cgroups、namespaces和AUFS
 - [Docker 基本原理 - 知乎](^4^)：这是一个简单说明了Docker容器本质上是一个进程，运行于自己独立的命名空间中，所有的数据都存储在容器中的文章。
 - [docker启动容器全过程以及原理-腾讯云开发者社区-腾讯云](^5^)：这是一个介绍了Docker容器启动过程和原理的网页，包含了一些代码和命令。
 
-源: 与必应的对话， 2023/9/26
+
 (1) Docker技术核心原理讲解 - 知乎. https://zhuanlan.zhihu.com/p/144747363.
 (2) Docker原理（图解+秒懂+史上最全）_40岁资深老架构师尼 .... https://blog.csdn.net/crazymakercircle/article/details/120747767.
 (3) Docker 原理新手指南：一文看懂 Docker 是什么? - Red Hat. https://www.redhat.com/zh/topics/containers/what-is-docker.
@@ -116,7 +116,7 @@ Kubernetes和Docker之间的关系可以说是相辅相成的。Docker为Kuberne
 - [Kubernetes 和 Docker 的关系 - zourui4271 - 博客园](^3^)：这是一个从虚拟化角度和部署角度分析了Kubernetes和Docker之间的关系的博客，用两张图进行了对比。
 - [简单聊聊k8s，和docker之间的关系 - CSDN博客](^4^)：这是一个转载了掘金博客²的网页，内容与²相同。
 
-源: 与必应的对话， 2023/9/26
+
 (1) Kubernetes和Docker到底有啥关系？ - 知乎. https://zhuanlan.zhihu.com/p/87186261.
 (2) 简单聊聊k8s，和docker之间的关系 - 掘金. https://juejin.cn/post/7224149297951195193.
 (3) Kubernetes 和 Docker 的关系 - zourui4271 - 博客园. https://www.cnblogs.com/zourui4271/p/14118708.html.
