@@ -1,7 +1,7 @@
 ---
-title: kubernetes-基本架构
+title: kubernetes-1-基本架构
 date: 2024-01-03 20:36:05
-tags:
+tags: kubernetes
 ---
 k8s是未来
 <!--more-->
@@ -40,6 +40,7 @@ k8s是未来
 * 管理层：系统度量（如基础设施、容器和网络的度量），自动化（如自动扩展、动态 Provision 等）以及策略管理（RBAC、Quota、PSP、NetworkPolicy 等）、Service Mesh（部分位于管理层）
 * 接口层：kubectl 命令行工具、客户端 SDK 以及集群联邦
 * 生态系统：日志监控/集群配置等
+> 作为开发者，最主要的就是理解服务、任务的执行部署方式，熟悉kubectl和API的使用，了解流量控制  
 
 
 
@@ -47,7 +48,6 @@ k8s是未来
 
 ---
 学习资料:
-[k8s详细教程(一) (znunwm.top)](https://znunwm.top/archives/k8s-xiang-xi-jiao-cheng)  
 
 [2.2.2_集群架构与组件-组件详解：核心组件与分层架构_bilibili_哔哩哔哩_bilibili](https://www.bilibili.com/video/BV1MT411x7GH?p=10&spm_id_from=pageDriver&vd_source=eeb1c6e015a7ca03cb75e71d6ae0a6e1)  
 
