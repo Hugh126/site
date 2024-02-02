@@ -105,4 +105,4 @@ deploy:
   type: git
   repo: git@github.com:Hugh126/Hugh126.github.io.git
   branch: master
-  message: jdbc参数最佳实践
+  message: k8s

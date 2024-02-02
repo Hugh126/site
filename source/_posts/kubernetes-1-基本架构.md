@@ -3,7 +3,7 @@ title: kubernetes-1-基本架构
 date: 2024-01-03 20:36:05
 tags: kubernetes
 ---
-k8s是未来
+k8s是未来，理解架构
 <!--more-->
 
 

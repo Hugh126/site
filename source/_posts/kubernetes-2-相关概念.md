@@ -1,10 +1,12 @@
 ---
 title: kubernetes-2-相关概念
 date: 2024-01-30 14:53:00
-tags:
+tags: kubernetes
 ---
-![image](assets/image-20240116183723-ievwwyy.png)
+k8s是未来，理解各类基本概念再开始
 <!--more-->  
+
+![image](/image/assets/image-20240116183723-ievwwyy.png)
 
 ## 元数据类型
 
