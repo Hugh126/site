@@ -4,6 +4,7 @@ date: 2023-04-06 14:05:35
 tags:
 - spring-aop
 - AspectJ
+categories: Spring+
 ---
 最开始用Spring切面的时候听说是基于AspectJ的，便认为SpringAop是依赖AspectJ实现的。其实不然，SpringAop其实不依赖AspectJ，它本身的AOP功能是基于SpringBean管理的，通过动态代理(JDK或CgLib)实现的。然而，这却不是一个完整的AOP解决方案，所以需要引入AspectJ。
 <!--more-->  

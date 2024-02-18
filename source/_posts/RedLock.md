@@ -1,7 +1,8 @@
 ---
 title: RedLock
 date: 2023-08-01 15:26:24
-tags:
+tags: redis
+categories: 中间件
 ---
 RedLock是一种分布式锁的实现方式，算法思想很好理解：假设有N个相互独立无任何协作的Redis master，在每个master上使用单机Redis的加锁方式加锁。当有N/2+1个节点加锁成功，即获取分布式锁成功；否则在所有实例上解锁。
 <!--more-->

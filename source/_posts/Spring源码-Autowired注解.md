@@ -2,6 +2,8 @@
 title: Spring源码-Autowired注解
 date: 2023-10-11 13:19:59
 tags: 
+- Spring源码
+categories: Spring+
 ---
 古人说“绝知此事要躬行”，对于学习框架源码更是如此（本篇介绍源码阅读基础）
 <!--more-->

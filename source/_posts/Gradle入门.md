@@ -1,7 +1,8 @@
 ---
 title: Gradle入门
 date: 2023-04-11 15:10:05
-tags:
+tags: gradle
+categories: Spring+
 ---
 现在越来越多的开源项目都使用gradle来构建，而且基于gradle灵活的语法和增量构建等特性，在大型项目构建的时候大大节约了时间，实乃高效干活的利器，不得不学起来~
 <!--more-->

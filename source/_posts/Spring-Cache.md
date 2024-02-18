@@ -2,6 +2,7 @@
 title: Spring Cache
 date: 2023-03-31 19:30:47
 tags: spring cache
+categories: Spring+
 ---
 SpringCache是Spring基于Spring切面提供的缓存增强技术。它集成了缓存常见的各种操作,如Cacheable/CachePut/CacheEvit等；也支持了ConcurrentMapCache/RedisCache/EhCacheCache等各种缓存实现。它集成简单，支持丰富，实乃是业务开发的利器！  
 

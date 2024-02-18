@@ -2,6 +2,7 @@
 title: grpc
 date: 2023-03-19 11:48:58
 tags: grpc
+categories: Spring+
 #description: gRPC是Google开源的一种高性能远程调用框架，它能高效地连接服务，支持负载均衡、跟踪、健康检查和身份验证。
 ---
 

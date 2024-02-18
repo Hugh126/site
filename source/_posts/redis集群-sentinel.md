@@ -1,7 +1,8 @@
 ---
 title: redis集群-sentinel
 date: 2024-01-19 21:22:58
-tags:
+tags: redis
+categories: 中间件
 ---
 redis哨兵模式实现了redis基本的高可用
 <!--more-->

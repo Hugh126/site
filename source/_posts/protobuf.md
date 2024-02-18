@@ -2,6 +2,7 @@
 title: protobuf
 date: 2023-03-19 11:52:58
 tags: protobuf
+categories: Spring+
 #description: Protobuf是Google开发的一种跨语言跨平台, 轻量高效的序列化数据结构
 ---
 

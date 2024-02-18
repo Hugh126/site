@@ -1,7 +1,8 @@
 ---
 title: 从Docker到Kubernetes
 date: 2023-09-26 14:58:33
-tags:
+tags: k8s
+categories: 云原生
 ---
 docker作为容器虚拟化技术，用起来是真的香。谁用谁知道...  
 知道什么是趋势，我们就知道到底要不要去学一样东西。

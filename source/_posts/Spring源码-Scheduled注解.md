@@ -2,6 +2,8 @@
 title: Spring源码-@Scheduled注解
 date: 2023-10-08 15:22:11
 tags:
+- Spring源码
+categories: Spring+
 ---
 
 在熟悉Spring中Bean启动流程后，知晓@Scheduled的原理不难。但是，这次debug并不简单...

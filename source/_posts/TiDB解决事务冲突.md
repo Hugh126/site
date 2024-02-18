@@ -1,7 +1,8 @@
 ---
 title: TiDB解决事务冲突
 date: 2023-10-18 15:43:26
-tags: TiDB
+tags: Tidb
+categories: 数据库
 ---
 TiDB的事务提交是使用二阶段提交实现的。在客户端commit发起后，TiDB会从所有需要写入的Key中选取一个作为Primary Key，然后向所有涉及的TiKV发起prewrite。当发现有其他事务写当前Key，则发生写冲突。  
 <!--more-->

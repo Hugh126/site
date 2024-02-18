@@ -1,7 +1,10 @@
 ---
 title: jdbc处理大数据时的坑
 date: 2023-12-20 19:44:09
-tags:
+tags: 
+- jdbc
+- 数据库
+categories: Spring+
 ---
 作为有点经验的java coder，使用jdbc或者mybatis的时候有没有发现一点问题？插入大量数据怎么这么慢！查询大量结果，怎么一下就OOM了！！
 <!--more-->

@@ -2,6 +2,7 @@
 title: kubernetes-3-安装与使用
 date: 2024-01-30 14:53:25
 tags: kubernetes
+categories: 云原生
 ---
 k8s是未来，理解了基础架构和概念后，从实践入手
 <!--more-->

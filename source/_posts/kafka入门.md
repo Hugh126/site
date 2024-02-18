@@ -1,7 +1,9 @@
 ---
 title: kafka入门
 date: 2023-09-14 14:37:52
-tags: 中间件
+tags: 
+- kafka
+categories: 中间件
 ---
 一个大家都在用的分布式的事件流平台...
 <!--more-->
