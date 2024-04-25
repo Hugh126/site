@@ -2,7 +2,7 @@
 title: 一次OOM分析
 date: 2024-01-04 16:28:59
 tags: OOM
-categories: 问题经验
+categories: troubleshooting
 ---
 世界上没有无缘无故的爱，也没有无缘无故的恨。  
 OOM了，肯定是要找到元凶的！

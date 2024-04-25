@@ -5,7 +5,7 @@ tags:
 - hexo
 - blog
 description: hexo使用概述
-categories: 问题经验
+categories: 其他
 ---
 
 ### 1、安装

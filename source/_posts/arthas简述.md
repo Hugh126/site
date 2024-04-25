@@ -3,7 +3,7 @@ title: arthas简述
 date: 2023-07-07 17:28:08
 tags:
 - arthas
-categories: 问题经验
+categories: troubleshooting
 ---
 arthas作为一款监控诊断的工具，能实时查看JVM信息，可以对业务问题进行诊断，包括查看方法调用的出入参、异常，监测方法执行耗时等。实乃线上跟踪定位工具的不二之选!
 <!--more-->

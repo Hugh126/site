@@ -4,7 +4,8 @@ date: 2023-12-20 19:44:09
 tags: 
 - jdbc
 - 数据库
-categories: Spring+
+- 大数据
+categories: 数据库
 ---
 作为有点经验的java coder，使用jdbc或者mybatis的时候有没有发现一点问题？插入大量数据怎么这么慢！查询大量结果，怎么一下就OOM了！！
 <!--more-->
@@ -144,8 +145,9 @@ INSERT INTO benchtest.user (id, name, sno, email, pass, source) VALUES (1, DEFAU
      *
      * 结果： 如果不设置流式读取，会OOM
      *
-     * [原理] 据说客户端和服务端两个buffer相互阻塞发力。无法验证，看看就行
-     * https://zhuanlan.zhihu.com/p/47060032
+     * [原理] JDBC无论设置setFetchSize多少，都是客户端全部缓存后处理；当需要获取大量数据时，应该使用流式获取
+     * [注意] 流式Fetch会一直占用连接，慎用！
+     * @see 流式Fetch的坑 https://blog.csdn.net/nym232/article/details/89240054
      */
     @Test
     public void streamFetch() {

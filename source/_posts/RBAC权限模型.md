@@ -3,7 +3,7 @@ title: RBAC权限模型
 date: 2024-01-16 17:05:39
 tags: 
 - RBAC
-categories: 问题经验
+categories: 其他
 ---
 权限管理模型有很多，但是最为经典实用的还是RBAC。若想设计权限模型或对其进行扩展，了解RBAC是必不可少的功课
 <!--more-->

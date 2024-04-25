@@ -40,7 +40,15 @@ external_link:
   exclude: ''
 filename_case: 0
 render_drafts: false
-post_asset_folder: false
+
+# 图片无法预览问题
+# https://hexo.io/zh-cn/docs/asset-folders
+post_asset_folder: true
+marked:
+  prependRoot: true
+  postAsset: true
+
+
 relative_link: false
 future: true
 highlight:
@@ -105,4 +113,4 @@ deploy:
   type: git
   repo: git@github.com:Hugh126/Hugh126.github.io.git
   branch: master
-  message: k8s
+  message: 整理分类
