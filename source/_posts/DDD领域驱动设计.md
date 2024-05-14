@@ -40,13 +40,16 @@ categories: 其他
 > 领域层：领域模型/领域服务/仓储和防腐层的接口定义  
 >  基础设施层：仓储和防腐层接口实现/存储等基础层能力
   
-
+**简言之，更加抽象技术层次划分，更加聚合资源结构，更加强调用户体验**
 
 ## 四、DDD的概念与核心思想  
 
 
 ### 领域模型
 ![](https://mmbiz.qpic.cn/mmbiz_png/Z6bicxIx5naJpmMBl8RNx7xT4PTlDr0Byxm894iaHgWXxiclo5bXfUwKFibJPgB59YRIq0ZfOsQvIHvrfM8aX2AyOA/640?wx_fmt=png&wxfrom=5&wx_lazy=1&wx_co=1) 
+
+**DDD的改造，其核心是是如何划定边界，以确定技术架构**  
+
 
 ### 划分边界
 1. 在领域驱动设计的战略设计中，我们采用事件风暴方法梳理业务过程中的用户操作、事件以及外部依赖关系等，从而梳理出领域实体等领域对象。
@@ -55,10 +58,7 @@ categories: 其他
 
 
 
-## 参考
-[腾讯：白话DDD从入门到实践](http://www.yitb.com/article-41463)  
-[美团：领域驱动设计在互联网业务开发中的实践](https://tech.meituan.com/2017/12/22/ddd-in-practice.html)  
-[阿里：一文揭秘DDD到底解决了什么问题](一文揭秘DDD到底解决了什么问题)
+
 
 
 
