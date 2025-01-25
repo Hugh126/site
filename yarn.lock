@@ -904,6 +904,11 @@ hexo-theme-landscape@^0.0.3:
   resolved "https://registry.npmmirror.com/hexo-theme-landscape/-/hexo-theme-landscape-0.0.3.tgz"
   integrity sha512-b0Di+TUVs4ESrNX4ULEh9uQmADpO6kr10rIJ2OGZM8suNQNFKdxn+vJUjnLfKkCPJAfVmS7/S83KCNYe4tpoNw==
 
+hexo-theme-next@^8.21.0:
+  version "8.21.0"
+  resolved "https://registry.npmmirror.com/hexo-theme-next/-/hexo-theme-next-8.21.0.tgz"
+  integrity sha512-O0xKsX73QJSOfPs8R+Kd1sFbJQhy0Od3NsoN5uR717IXjK4xn2w9x+GlSijEfh96JkhCIQOOPS5xBtzsfpjE6A==
+
 hexo-util@^2.0.0, hexo-util@^2.4.0, hexo-util@2.5.0:
   version "2.5.0"
   resolved "https://registry.npmmirror.com/hexo-util/-/hexo-util-2.5.0.tgz"
